@@ -1,0 +1,33 @@
+.stack {
+    margin: auto;
+    position: relative;
+    width: fit-content;
+}
+.stack span{
+    height: 4.5em;
+}
+.stack img {
+    height: 100%;
+    padding: 1em;
+    height: inherit;
+    background-color: var(--shadow);
+}
+.stack:hover .btn_more{ display: block;}
+.btn_more {
+    left: 0;
+    top: -25px;
+    width: 100%;
+    padding: 2px;
+    display: none;
+    position: absolute;
+    animation: slide-in 100ms linear;
+    border: dashed 1px var(--btn-color);
+}
+.btn_more:hover::before { background: none;}
+.btn_more small{
+    margin: auto;
+    font-weight: bold;
+}
+@media (max-width:650px) {
+    .btn_more{display: block;}
+}

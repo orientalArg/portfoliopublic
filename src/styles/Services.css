@@ -1,0 +1,165 @@
+.services .title {
+    margin: 4rem 0;
+    text-align: center;
+    text-transform: capitalize;
+    height: 400px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-image: url(/public/bridge.svg);
+}
+.services .title h4{color: red;}
+.services .title h1 {margin-bottom: 1em;text-transform: initial;}
+.box {
+    padding: 0 1em;
+    display: flex;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(-100px);
+}
+._container {
+        width: 100%;
+        max-width: 999px;
+        min-height: 450px;
+        max-height: min-content;
+    background-color: #4566d5;
+    overflow: hidden;
+    margin: .5em 1em;
+    padding: 2.5em;
+    position: relative;
+}
+._container:hover {box-shadow: rgb(0 0 0 / 60%) 1px 1px 10px 0px;transition: ease 200ms;}
+._container ._title {z-index: 10;position: relative;}
+._container p, ._container h4 {
+    z-index: 5;
+    position: relative;
+    letter-spacing: 1px;
+}
+._container h4 {
+    margin: 0;
+    color:#fff;
+    font-size: 1.1em;
+    font-family: sans-serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px 3px #00000049;
+}
+._container .bckg {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+        top: 0;
+        left: 0;
+        position: absolute;
+        transform: rotate(45deg);
+        filter: opacity(0.1) grayscale(1);
+        transition: ease 200ms;
+    pointer-events: none;
+
+}
+._container:hover .bckg {
+    transform:  rotate(20deg) scale(.8);
+    filter: opacity(0.3) grayscale(0);
+}
+._container .repository a {
+    right: 0;
+    top: 0;
+    z-index: 30;
+    padding: .7em 1.2em;
+    position: absolute;
+    background-color: #00d9ff70;
+}
+._container .repository a::before { animation: none; }
+._container ._title { margin-bottom: 4em;}
+._container ._title i { margin: 40px 0;}
+._container ._title li { margin: 5px 0;}
+.template_list {
+    gap: 2em;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    z-index: 5;
+}
+.template {
+    width: 220px;
+    height: 300px;
+    z-index: 10;
+    display: flex;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #00d9ff25;
+    justify-content: center;
+}
+.template:hover .hand {display: none;}
+.template .hand {
+        top: 0;
+        left: 0;
+        z-index: 20;
+        position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 80%;
+    overflow: hidden;
+    background-color: #4567d560;
+}
+.template .hand img {
+    scale: .5;
+    height: auto;
+    margin: auto;
+    display: block;
+    animation: hover 3s infinite linear;
+}
+.template:hover .desc {
+    display: flex;
+    flex-direction: column;
+    animation: show 100ms ease-in;
+}
+.template img {height: 100%;}
+.template .desc {
+    bottom: 0;
+    z-index: 10;
+    display: none;
+    position: absolute;
+    background: #050505b9;
+    text-align: center;
+    padding: 1em;
+    height: 100%;
+    width: 100%;
+}
+.template .desc h4{ text-transform: uppercase;}
+.template .desc p{ margin: 2em 0;}
+.template .desc a { margin:0 auto;background-color: #fff;color: #4566d5;font-weight: bold;}
+
+@keyframes show {from { opacity: 0;}to { opacity: 1;}}
+@keyframes hover {
+    0%{rotate: 0deg;}
+    25%{rotate: 15deg;}
+    50%{rotate: 0deg;}
+    75%{rotate: -15deg;}
+    100%{rotate: 0deg;}
+}
+@keyframes click {
+    0%{rotate: x 0deg;}
+    50%{rotate: x -25deg;}
+    100%{rotate: x 0deg;}
+}
+@media (max-width:800px){
+    .template_list {
+        align-items: center;
+        flex-direction: column;
+    }
+    .template{
+        width: 50%;
+        height: auto;
+    }
+}
+@media (max-width:500px){
+    .template{
+        width: 70%;
+        height: auto;
+    }
+    .template .hand img {
+        animation: click 1.5s infinite linear;
+    }
+}

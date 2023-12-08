@@ -1,0 +1,52 @@
+.contact {
+    padding: 1em;
+    display: none;
+    min-width: 100%;
+    min-height: 100%;
+    background: rgb(0 0 0 / 77%);
+        top: 0;
+        left: 0;
+        z-index: 40;
+        position: fixed;
+    }
+.contact .title{
+    position: relative;
+}
+.contact .title h2{margin-bottom: 1em;}
+.contact .title h4{
+    color: rgb(243, 130, 0);
+    font-family: sans-serif;
+}
+.contact .btn_close {
+    top: 0em;
+    right: 0;
+    position: absolute;
+}
+.contact div {
+    width: 100%;
+    margin: auto;
+    max-width: 600px;
+        animation-name: slide-in;
+        animation-duration: 400ms;
+}
+.contact form { 
+    display: flex;
+    flex-direction: column;
+}
+.contact form input, textarea {
+    min-height: 35px;
+    margin: .5em 0;
+    border: none;
+    padding: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+.contact form textarea {
+    height: 130px;
+}
+.contact form .send {
+    font-size: 1em;
+    text-transform: uppercase;
+}
